@@ -3,9 +3,6 @@ from player import Player
 from car_manager import CarManager
 import time
 
-# TODO create the cars randomly (turtles in form of squares)
-#  make them move horizontally from right to left
-
 # TODO create a game board with a score board
 #  detect collision with cars
 #  increase speed when player reaches upper wall
@@ -23,10 +20,10 @@ cars = CarManager()
 
 game_over = False
 while not game_over:
-    #time.sleep(cars.move_speed)
+    time.sleep(cars.move_speed)
     screen.update()
 
-    #cars.move()
+    cars.move()
 
 
 
