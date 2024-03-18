@@ -10,7 +10,7 @@ screen.tracer(0)
 
 player = Player()
 screen.listen()
-screen.onkey(player.up, "Up")
+screen.onkeypress(player.up, "Up")
 
 car_manager = CarManager()
 
