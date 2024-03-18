@@ -1,4 +1,5 @@
 from turtle import Screen
+from player import Player
 import time
 
 # TODO create a player (black turtle) on the bottom of the screen positioned in the middle
@@ -14,6 +15,12 @@ import time
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
+
+player = Player()
+screen.listen()
+screen.onkey(player.up, "Up")
+screen.onkey(player.down, "Down")
+
 
 game_over = False
 while not game_over:
