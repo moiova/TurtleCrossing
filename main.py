@@ -1,12 +1,10 @@
 from turtle import Screen
 from player import Player
+from car_manager import CarManager
 import time
 
-# TODO create a player (black turtle) on the bottom of the screen positioned in the middle
-#  make it movable up and down
-
 # TODO create the cars randomly (turtles in form of squares)
-#  make them move horizontally
+#  make them move horizontally from right to left
 
 # TODO create a game board with a score board
 #  detect collision with cars
@@ -21,11 +19,15 @@ screen.listen()
 screen.onkey(player.up, "Up")
 screen.onkey(player.down, "Down")
 
+cars = CarManager()
 
 game_over = False
 while not game_over:
     #time.sleep(cars.move_speed)
     screen.update()
+
+    #cars.move()
+
 
 
 screen.exitonclick()
