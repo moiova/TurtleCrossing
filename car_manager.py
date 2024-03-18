@@ -14,7 +14,7 @@ class CarManager(Turtle):
         self.car_speed = STARTING_MOVE_DISTANCE
 
     def create_car(self):
-        random_number = random.randint(1, 8)
+        random_number = random.randint(1, 10)
         if random_number == 1 or 8:  # slow down car creation
             new_car = Turtle("square")
             new_car.penup()
