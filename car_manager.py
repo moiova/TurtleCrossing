@@ -1,20 +1,21 @@
 import random
-import time
 from turtle import Turtle
 
 CAR_COLORS = ["deep sky blue", "deep sky blue", "light steel blue", "purple", "yellow", "yellow", "yellow", "spring green", "coral", "coral", "coral", "light cyan", "lawn green"]
 STARTING_MOVE_DISTANCE = 5
-MOVE_INCREMENT = 10
+MOVE_INCREMENT = 5
 
 
 class CarManager(Turtle):
     def __init__(self):
-        self.move_speed = 0.2
+        super().__init__()
+        self.hideturtle()
         self.all_cars = []
+        self.car_speed = STARTING_MOVE_DISTANCE
 
     def create_car(self):
-        random_number = random.randint(1, 6)
-        if random_number == 6:  # slow down car creation
+        random_number = random.randint(1, 8)
+        if random_number == 1 or 8:  # slow down car creation
             new_car = Turtle("square")
             new_car.penup()
             new_car.color(random.choice(CAR_COLORS))
@@ -25,4 +26,7 @@ class CarManager(Turtle):
 
     def move_cars(self):
         for car in self.all_cars:
-            car.forward(STARTING_MOVE_DISTANCE)
+            car.forward(self.car_speed)
+
+    def speed_up_cars(self):
+        self.car_speed += MOVE_INCREMENT

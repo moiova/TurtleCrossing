@@ -14,6 +14,9 @@ class GameBoard(Turtle):
         self.clear()
         self.write(f"Level:  {self.level}", move=False, align='center', font=('Arial', 14, 'normal'))
 
-    def increment_level(self):
+    def game_over(self):
+        self.goto(0, 0)
+        self.write(f"Game Over!", move=False, align='center', font=('Arial', 44, 'normal'))
+
+    def increase_level(self):
         self.level += 1
-        self.update_board()

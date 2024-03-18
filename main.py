@@ -21,7 +21,7 @@ board = GameBoard()
 
 game_over = False
 while not game_over:
-    time.sleep(car_manager.move_speed)
+    time.sleep(0.3)
     screen.update()
 
     car_manager.create_car()
@@ -29,11 +29,13 @@ while not game_over:
 
     for car in car_manager.all_cars:
         if player.distance(car) < 20:
-            print("Game over")
+            board.game_over()
             game_over = True
 
-    if player.ycor() > 290:
-        board.increment_level()
+    if player.is_player_at_finish_line():
+        board.increase_level()
+        board.update_board()
         player.go_to_start()
+        car_manager.speed_up_cars()
 
 screen.exitonclick()
